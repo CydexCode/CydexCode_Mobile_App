@@ -1,12 +1,40 @@
 import React from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import Login from '../Pages/Login.js';
+import Home from '../Pages/Home.js';
+import { useState, useEffect } from 'react'
+import { AuthContext } from '../Context/AuthContext.js';
+import Services from '../Shared/Services.js';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function HomeScreen() {
+
+  const [userData, setUserData] = useState();
+  useEffect(() => {
+    Services.getUserAuth().then(resp=>{
+      console.log(resp);
+      if(resp)
+      {
+        setUserData(resp)
+      }else{
+        
+      }
+    })
+  }, [])
+
+
   return (
     <View>
-      <Login />
+      <AuthContext.Provider
+        value={{ userData, setUserData }}>
+        {userData ? <Home /> : <Login />}
+      </AuthContext.Provider>
+
     </View>
+
+      
+    
   );
 }
 

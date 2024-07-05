@@ -1,51 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { Colors } from '../Shared/Colors.js';
+
+import { React, useState, useEffect, useContext } from 'react'
+import { Colors } from '../Shared/Colors.js'
 import { Ionicons } from '@expo/vector-icons';
-import * as Google from 'expo-auth-session/providers/google';
-import * as AuthSession from 'expo-auth-session';
+import * as Google from 'expo-auth-session/providers/google.js';
+import * as AuthSession from 'expo-auth-session/providers/google.js';
 import * as WebBrowser from 'expo-web-browser';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { AuthContext } from '../Context/AuthContext.js';
 
-WebBrowser.maybeCompleteAuthSession();
+
+
 
 export default function Login() {
+    WebBrowser.maybeCompleteAuthSession();
+    const {userData,setUserData}=useContext(AuthContext);
     const [accessToken, setAccessToken] = useState();
     const [userInfo, setUserInfo] = useState();
-
     const [request, response, promptAsync] = Google.useAuthRequest({
-        androidClientId: '1044958203630-kjabn0mkche4nkalb5l1sj06c3heu2eq.apps.googleusercontent.com',
-        expoClientId: '1044958203630-f5kbg4f4a6ksim9q88rndi41i5ei6nko.apps.googleusercontent.com',
-        redirectUri: AuthSession.makeRedirectUri({
-            useProxy: true,
-        }),
+        androidClientId: '1044958203630-gp648tsk9fk5rvukl724d4354g23fu8s.apps.googleusercontent.com',
+        expoClientId: '1044958203630-3raanm52kn828ke27fmj3f99j3ampgcl.apps.googleusercontent.com',
+
     });
 
     useEffect(() => {
-        if (response?.type === 'success') {
-            setAccessToken(response.authentication.accessToken);
-            console.log(response.authentication.accessToken);
-            getUserData();
+
+        if (response?.type == 'success') {
+            setAccessToken(response.authentication.accessToken)
+            console.log(response.authentication.accessToken)
+            getUserData()
         }
-    }, [response]);
+
+    }, [response])
 
     const getUserData = async () => {
         try {
-            const response = await fetch(
-                'https://www.googleapis.com/userinfo/v2/me',
+            const resp = await fetch(
+                "https://www.googleapis.com/userinfo/v2/me",
                 {
-                    headers: { Authorization: `Bearer ${accessToken}` },
+                    headers: { Authorization: `Bearer ${response.authentication.accessToken}` },
                 }
             );
 
-            const user = await response.json();
-            console.log('User Detail', user);
+            const user = await resp.json();
+            console.log("User Detail", user)
             setUserInfo(user);
+            setUserData(user);
+            await Services.setUserAuth(user)
+            //navigation.navigate('Home'); // Navigate to Home page
         } catch (error) {
             //
         }
-    };
+    }
 
     return (
         <View>
@@ -55,13 +62,16 @@ export default function Login() {
                 <Text style={{ textAlign: 'center', marginTop: 80, fontSize: 20 }}>
                     Login/Signup
                 </Text>
-                <TouchableOpacity style={styles.button} onPress={() => promptAsync()}>
+                <TouchableOpacity style={styles.button}
+                    onPress={() => promptAsync()}> 
+                   
                     <Ionicons name="logo-google" size={24} color="white" style={{ marginRight: 10 }} />
                     <Text style={{ color: '#fff' }}>Sign In with Google</Text>
                 </TouchableOpacity>
             </View>
+
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -73,10 +83,12 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         paddingBottom: 150,
     },
+
     WelcomeText: {
         fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
+
     },
     button: {
         backgroundColor: '#32CD32',
@@ -87,5 +99,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
-    },
-});
+    }
+
+
+
+})
