@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import Login from '../Pages/Login.js';
-import Home from '../Pages/Home.js';
+
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
-import { ClerkProvider } from '@clerk/clerk-expo/dist/ClerkProvider';
+import ClerkProvider from '@clerk/clerk-expo/dist/ClerkProvider';
+import TabNavigation from '../Navigations/TabNavigation.js';
+import NavigationContainer from '@react-navigation/native';
 
 export default function HomeScreen() {
   return (
@@ -13,14 +15,16 @@ export default function HomeScreen() {
 
     <ClerkProvider publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <SignedIn>
-           <Home/>
+        <NavigationContainer>
+          <TabNavigation />
+        </NavigationContainer>
       </SignedIn>
       <SignedOut>
         <Login />
       </SignedOut>
 
 
-     </ClerkProvider>
+    </ClerkProvider>
   );
 }
 

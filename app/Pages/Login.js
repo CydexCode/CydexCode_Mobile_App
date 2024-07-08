@@ -44,41 +44,7 @@ export default function Login() {
         }
     }, []);
 
-    // const [accessToken, setAccessToken] = useState();
-    // const [userInfo, setUserInfo] = useState();
 
-    // const [request, response, promptAsync] = Google.useAuthRequest({
-    //     androidClientId: '1044958203630-kjabn0mkche4nkalb5l1sj06c3heu2eq.apps.googleusercontent.com',
-    //     expoClientId: '1044958203630-f5kbg4f4a6ksim9q88rndi41i5ei6nko.apps.googleusercontent.com',
-    //     redirectUri: AuthSession.makeRedirectUri({
-    //         useProxy: true,
-    //     }),
-    // });
-
-    // useEffect(() => {
-    //     if (response?.type === 'success') {
-    //         setAccessToken(response.authentication.accessToken);
-    //         console.log(response.authentication.accessToken);
-    //         getUserData();
-    //     }
-    // }, [response]);
-
-    // const getUserData = async () => {
-    //     try {
-    //         const response = await fetch(
-    //             'https://www.googleapis.com/userinfo/v2/me',
-    //             {
-    //                 headers: { Authorization: `Bearer ${accessToken}` },
-    //             }
-    //         );
-
-    //         const user = await response.json();
-    //         console.log('User Detail', user);
-    //         setUserInfo(user);
-    //     } catch (error) {
-    //         //
-    //     }
-    // };
 
     return (
         <View>
