@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "CydexCode",
-    "slug": "CydexCode",
+    "name": "cydexcode",
+    "slug": "cydexcode",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "CydexCode",
+    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -19,9 +19,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.sachinthana.CydexCode",
-      "versionCode": 1
+      }
     },
     "web": {
       "bundler": "metro",
@@ -33,14 +31,6 @@
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "064189ec-8519-423e-a18b-b7000589c80b"
-      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Colors } from '../Shared/Colors.js';
+
 import { Ionicons } from '@expo/vector-icons';
 
 import * as WebBrowser from 'expo-web-browser';
@@ -48,7 +48,7 @@ export default function Login() {
 
     return (
         <View>
-            <Image source={require('../../assets/images/cydexcodeLogo.png')} />
+            <Image source={require('../assets/images/cydexcodeLogo.png')} />
             <View style={styles.container}>
                 <Text style={styles.WelcomeText}>Welcome to CydexCode</Text>
                 <Text style={{ textAlign: 'center', marginTop: 80, fontSize: 20 }}>
