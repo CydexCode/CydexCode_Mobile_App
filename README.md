@@ -1,7 +1,8 @@
 # CydexCode Mobile App 👋
 
 ### Login System
-![Screenshot 2024-07-09 201135](https://github.com/CydexCode/CydexCode_Mobile_App/assets/112784979/07a43b24-77f6-43ba-bdcd-9ca508e15363)
+
+![Untitled design (8)](https://github.com/CydexCode/CydexCode_Mobile_App/assets/112784979/653901d5-29f5-4052-af17-fe6c88649a96)
 
 
 ## Get started 
