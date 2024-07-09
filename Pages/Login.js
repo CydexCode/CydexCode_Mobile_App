@@ -50,8 +50,13 @@ export default function Login() {
         <View>
             <Image source={require('../assets/images/cydexcodeLogo.png')} />
             <View style={styles.container}>
-                <Text style={styles.WelcomeText}>Welcome to CydexCode</Text>
-                <Text style={{ textAlign: 'center', marginTop: 80, fontSize: 20 }}>
+                
+                <Text style={styles.IntroText}>
+                    Learn to <Text style={styles.highlight}>code</Text>, build 
+                    <Text style={styles.highlight}> impactful projects</Text>, and 
+                    earn <Text style={styles.highlight}>certifications</Text> with CydexCode
+                </Text>
+                <Text style={{ textAlign: 'center', marginTop: 80, fontSize: 17 }}>
                     Login/Signup
                 </Text>
                 <TouchableOpacity style={styles.button} onPress={onPress}>
@@ -76,6 +81,19 @@ const styles = StyleSheet.create({
         fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
+    },
+    IntroText: {
+        fontSize: 25,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginTop: 15,
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: -20,
+        color: '#333',
+    },
+    highlight: {
+        color: '#32CD32',
     },
     button: {
         backgroundColor: '#32CD32',
