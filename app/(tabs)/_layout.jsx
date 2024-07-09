@@ -1,40 +1,48 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { View, Text } from 'react-native'
+import React from 'react'
+import { Tabs } from 'expo-router'
+import {Ionicons} from '@expo/vector-icons'
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { ClerkProvider } from '@clerk/clerk-expo/dist/ClerkProvider';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
+  <Tabs screenOptions={{
+    headerShown:false
+  }}>
+    <Tabs.Screen 
+    name="Home"
+    options={{
+      tabBarLabel:"Home",
+      tabBarIcon:({color})=><Ionicons name="home" size={24} color={color}/>
+    }}
+    
+    />
+    <Tabs.Screen name="MyCourse"  
+    options={{
+      tabBarLabel:"MyCourse",
+      tabBarIcon:({color})=><MaterialIcons name="library-books" size={24} color={color}/>
+    }}
+    
+    />
 
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+    <Tabs.Screen name="LeaderBoard"
+    options={{
+      tabBarLabel:"LeaderBoard",
+      tabBarIcon:({color})=><MaterialIcons name="leaderboard" size={24} color={color}/>
+    }}
+    
+    />
+    <Tabs.Screen name="ProfileScreen"
+    options={{
+      tabBarLabel:"ProfileScreen",
+      tabBarIcon:({color})=><Ionicons name="people" size={24} color={color}/>
+    }}
+    
+    />
 
-  );
+
+  </Tabs>
+
+  )
 }
