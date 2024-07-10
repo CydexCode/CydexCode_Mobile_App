@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function LeaderBoard() {
+export default function Header() {
   return (
-    <View>
-      <Text>LeaderBoard</Text>
+    <View style={{ padding: 20 }}>
+      
     </View>
   )
 }
