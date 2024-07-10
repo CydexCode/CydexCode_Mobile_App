@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useUser, useClerk } from '@clerk/clerk-expo';
-import WelcomeHeader from '../Components/WelcomeHeader.js'
+import WelcomeHeader from '../Components/HomeScreen/WelcomeHeader.js/index.js'
 import SearchBar from '../Components/SerchBar.js';
 import TabNavigation from '../Navigations/TabNavigation'
 

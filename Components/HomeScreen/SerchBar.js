@@ -1,7 +1,7 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import React from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Colors from '../Shared/Colors';
+import Colors from '../../Shared/Colors';
 
 export default function SerchBar() {
     return (

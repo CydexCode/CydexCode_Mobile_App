@@ -15,10 +15,10 @@ export default function WelcomeHeader() {
         <View style={styles.Container}>
             <View>
                 <Text style={styles.greetingText}>Hello</Text>
-                <Text style={styles.userName}>{user?.firstName}</Text>
+                <Text style={styles.userName}>{user.fullName}</Text>
             </View>
             <Image
-                source={{ uri: user?.picture }}
+                source={{ uri: user.imageUrl }}
                 style={styles.profileImage}
             />
         </View>
@@ -32,16 +32,20 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
+        paddingTop:30,
+        
 
     },
     greetingText: {
         fontSize: 15,
         color: '#333',
+        color:'#fff',
     },
     userName: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#333',
+        color:'#fff',
     },
     profileImage: {
         width: 40,
