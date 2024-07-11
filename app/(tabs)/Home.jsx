@@ -5,18 +5,35 @@ import { useUser, useClerk } from '@clerk/clerk-expo';
 import WelcomeHeader from '../../Components/HomeScreen/WelcomeHeader.js'
 import SearchBar from '../../Components/HomeScreen/SerchBar.js';
 import Header from '../../Components/HomeScreen/Header.js';
+import CourseList from '../../Components/HomeScreen/CourseList.js';
 
 
 export default function Home() {
   const { signOut } = useClerk();
 
   return (
-    <View style={{ padding: 20, backgroundColor:'#32CD32',height:150 }}>
-  
+    <View>
+    <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140 , marginBottom:30}}>
+
       <WelcomeHeader />
       <SearchBar />
 
-   
+      
+    </View>
+      <View>
+        <View style={{ padding: 10  }}>
+          <CourseList level='basic' />
+         
+        </View>
+        <View style={{ padding: 10  }}>
+          
+          <CourseList level='advance' />
+        </View>
+       
+      </View>
+
+
+
 
 
     </View>
@@ -41,6 +58,6 @@ const styles = StyleSheet.create({
   },
 });
 
-  //  <TouchableOpacity style={styles.button} onPress={() => signOut()}>
-  //       <Text style={styles.buttonText}>Log Out</Text>
-  //     </TouchableOpacity>
+//  <TouchableOpacity style={styles.button} onPress={() => signOut()}>
+//       <Text style={styles.buttonText}>Log Out</Text>
+//     </TouchableOpacity>
