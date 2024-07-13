@@ -22,12 +22,12 @@ export default function Home() {
     </View>
       <View>
         <View style={{ padding: 10  }}>
-          <CourseList level='basic' />
+          <CourseList level='Basic' />
          
         </View>
         <View style={{ padding: 10  }}>
           
-          <CourseList level='advance' />
+          <CourseList level='Advance' />
         </View>
        
       </View>
