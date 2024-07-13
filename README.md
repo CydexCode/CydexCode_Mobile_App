@@ -32,13 +32,6 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
 - **Learning History**: Review your past activities and revisit completed lessons.
 - **Profile Customization**: Update your profile information, including bio, profile picture, and learning goals.
 
-## Why Choose CydexCode?
-- **Quality Content**: Our courses are designed by industry professionals and educators with years of experience.
-- **Community Support**: Join a global community of learners, collaborate on projects, and grow together.
-- **Flexible Learning**: Learn at your own pace, anytime, anywhere with our mobile-friendly platform.
-
-  Join CydexCode today and take the next step in your coding journey!
-
 ### Login System
 
 ![Untitled design (8)](https://github.com/CydexCode/CydexCode_Mobile_App/assets/112784979/653901d5-29f5-4052-af17-fe6c88649a96)
@@ -49,6 +42,13 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
 ### Courses
 
 ### Profile
+
+## Why Choose CydexCode?
+- **Quality Content**: Our courses are designed by industry professionals and educators with years of experience.
+- **Community Support**: Join a global community of learners, collaborate on projects, and grow together.
+- **Flexible Learning**: Learn at your own pace, anytime, anywhere with our mobile-friendly platform.
+
+  Join CydexCode today and take the next step in your coding journey!
 
 ## Get started 
 
