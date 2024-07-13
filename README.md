@@ -1,12 +1,12 @@
 # CydexCode E-LearningMobile App 👋
 
-##Overview
+## Overview
 
 The CydexCode E-Learning App is a comprehensive platform designed to make learning coding accessible, engaging, and effective for everyone. Whether you are just starting your coding journey or looking to advance your skills, our app offers a wide range of courses to meet your needs.
 
-##Key Features
+## Key Features
 
-## 1. Courses
+### Courses
 - **Basic Courses**
   - **Python for Beginners**: Learn the fundamentals of Python, including syntax, data types, and basic programming concepts.
   - **HTML Essentials**: Understand the structure of web pages with HTML, including tags, attributes, and forms.
@@ -25,7 +25,7 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
   - ...
   - ...
 
-### 2. User Profile Management
+### User Profile Management
 - **Personalized Dashboard**: Track your progress, view completed courses, and manage your learning path.
 - **Achievements and Badges**: Earn badges and certificates for completing courses and milestones.
 - **Bookmarks and Favorites**: Save your favorite courses and lessons for easy access.
@@ -36,6 +36,8 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
 - **Quality Content**: Our courses are designed by industry professionals and educators with years of experience.
 - **Community Support**: Join a global community of learners, collaborate on projects, and grow together.
 - **Flexible Learning**: Learn at your own pace, anytime, anywhere with our mobile-friendly platform.
+
+  Join CydexCode today and take the next step in your coding journey!
 
 ### Login System
 
