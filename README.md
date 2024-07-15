@@ -39,7 +39,9 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
 ### Home
 ![Untitled design (9)](https://github.com/user-attachments/assets/694cc678-a17a-4fe3-90f3-0bd794dae5c3)
 
-### Courses
+### Course Content 
+![vsV](https://github.com/user-attachments/assets/0d060a89-3fd6-4a0f-8932-ebd0cb3767cb)
+
 
 ### Profile
 
