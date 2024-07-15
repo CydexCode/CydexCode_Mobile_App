@@ -5,7 +5,8 @@ import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function DetailSection({ course }) {
+
+export default function DetailSection({course,enrollCourse,userEnrolledCourse}) {
     return (
         <View style={{
             padding: 10, borderRadius: 15,
@@ -48,7 +49,8 @@ export default function DetailSection({ course }) {
                     display: 'flex', flexDirection: 'row',
                     justifyContent: 'space-evenly', gap: 20
                 }}>
-                    <TouchableOpacity
+                   {userEnrolledCourse?.length==0?    <TouchableOpacity 
+                          onPress={()=>enrollCourse()}
 
                         style={{
                             padding: 15, backgroundColor: '#6857E8',
@@ -59,8 +61,9 @@ export default function DetailSection({ course }) {
                             color:'#fff', textAlign: 'center',
                             fontSize: 15
                         }}>Enroll For Free</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={{
+                    </TouchableOpacity>:null}
+                    <TouchableOpacity  
+                    style={{
                         padding: 15, backgroundColor:'#65CFF2',
                         borderRadius: 10
                     }}>
