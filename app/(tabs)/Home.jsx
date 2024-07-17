@@ -13,29 +13,28 @@ export default function Home() {
 
   return (
     <View>
-    <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140 , marginBottom:30}}>
+      <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140, marginBottom: 30 }}>
 
-      <WelcomeHeader />
-      <SearchBar />
+        <WelcomeHeader />
+        <SearchBar />
 
-      
-    </View>
+
+      </View>
       <View>
-        <View style={{ padding: 10  }}>
+        <View style={{ padding: 10 }}>
           <CourseList level='Basic' />
-         
+
         </View>
-        <View style={{ padding: 10  }}>
-          
+        <View style={{ padding: 10 }}>
+
           <CourseList level='Advance' />
         </View>
-       
+
       </View>
 
-
-
-
-
+      <TouchableOpacity style={styles.button} onPress={() => signOut()}>
+        <Text style={styles.buttonText}>Log Out</Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
 
 
   button: {
-    marginTop: 500,
+    marginTop: 80,
     backgroundColor: '#32CD32',
     padding: 10,
     margin: 30,
@@ -58,6 +57,3 @@ const styles = StyleSheet.create({
   },
 });
 
-//  <TouchableOpacity style={styles.button} onPress={() => signOut()}>
-//       <Text style={styles.buttonText}>Log Out</Text>
-//     </TouchableOpacity>

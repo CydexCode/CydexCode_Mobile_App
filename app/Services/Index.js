@@ -1,7 +1,7 @@
 import { gql, request } from 'graphql-request';
 
 
-const MASTER_URL = "https://us-east-1-shared-usea1-02.cdn.hygraph.com/content/clyflbflu03eb07wdgia6s5jy/master"
+const MASTER_URL = "https://api-us-east-1-shared-usea1-02.hygraph.com/v2/clyflbflu03eb07wdgia6s5jy/master"
 
 export const getCourseList = async (level) => {
   const query = gql`
@@ -67,12 +67,12 @@ export const enrollCourse = async (courseId, userEmail) => {
 
 
 
-export const getUserEnrolledCourse=async(courseId,userEmail)=>{
-  const query=gql`
+export const getUserEnrolledCourse = async (courseId, userEmail) => {
+  const query = gql`
   query GetUserEnrolledCourse {
     userEnrolledCourses(
-      where: {courseId: "`+courseId+`", 
-        userEmail: "`+userEmail+`"}
+      where: {courseId: "`+ courseId + `", 
+        userEmail: "`+ userEmail + `"}
     ) {
       id
       courseId
@@ -82,6 +82,6 @@ export const getUserEnrolledCourse=async(courseId,userEmail)=>{
     }
   }
   `
-  const result=await request(MASTER_URL,query);
+  const result = await request(MASTER_URL, query);
   return result;
 }
