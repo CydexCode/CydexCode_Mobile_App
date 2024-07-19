@@ -1,27 +1,39 @@
-import { View, Text, StyleSheet ,TouchableOpacity, ToastAndroid } from 'react-native'
-import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ToastAndroid } from 'react-native'
+import React, { useContext } from 'react';
 import Colors from '../../Colors/Colors.js'
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from 'expo-router';
-
+import { useNavigation, useRoute } from '@react-navigation/native'
+import { CompleteChapterContext } from '../../app/Context/CompleteChapterContext.js';
 
 export default function ChapterSection({ chapterList, userEnrolledCourse }) {
 
-    const navigation=useNavigation();
-    const OnChapterPress=(content)=>{
-        if(userEnrolledCourse.length==0)
-        {
-          ToastAndroid.show('Please Enroll Course!',ToastAndroid.LONG)
-          return ;
+    const { isChapterComplete, setIsChapterComplete } = useContext(CompleteChapterContext)
+
+    const navigation = useNavigation();
+    const OnChapterPress = (chapter) => {
+        if (userEnrolledCourse.length == 0) {
+            ToastAndroid.show('Please Enroll Course!', ToastAndroid.LONG)
+            return;
         }
-        else{
-           
-            navigation.navigate('ChapterContentScreen',{
-              content:content
-             
+        else {
+            setIsChapterComplete(false);
+            navigation.navigate('ChapterContentScreen', {
+                content: chapter.content,
+                chapterId: chapter.id,
+                userCourseRecordId: userEnrolledCourse[0]?.id
             })
-          }
-      }
+        }
+    }
+
+    const checkIsChapterCompleted = (chapterId) => {
+        if (userEnrolledCourse[0]?.completedChapter?.length <= 0) {
+            return false;
+        }
+        const resp = userEnrolledCourse[0]?.completedChapter
+            .find(item => item.chapterId == chapterId)
+
+        return resp;
+    }
 
     return chapterList && (
         <View style={{
@@ -34,19 +46,20 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
                 fontSize: 22
             }}>Chapters</Text>
             {chapterList.map((item, index) => (
-                <TouchableOpacity style={{
-                    display: 'flex', flexDirection: 'row',
-                    alignItems: 'center', justifyContent: 'space-between', borderWidth: 1, padding: 15, borderRadius: 10, marginTop: 10, borderColor: Colors.GRAY
-                }} 
-                onPress={()=>OnChapterPress(item.content)}>
+                <TouchableOpacity style={[checkIsChapterCompleted(item.id)
+                    ? styles.CompleteChapter
+                    : styles.inCompleteChapter]}
+                    onPress={() => OnChapterPress(item)}>
                     <View style={{
                         display: 'flex', flexDirection: 'row',
                         alignItems: 'center', gap: 10
                     }}>
-                        <Text style={{
-                            fontFamily: 'outfit-medium',
-                            fontSize: 27, color: Colors.GRAY
-                        }}>{index + 1}</Text>
+                        {checkIsChapterCompleted(item.id) ?
+                            <Ionicons name="checkmark-circle" size={30} color={Colors.GREEN} />
+                            : <Text style={{
+                                fontFamily: 'outfit-medium',
+                                fontSize: 27, color: Colors.GRAY
+                            }}>{index + 1}</Text>}
                         <Text style={{
                             fontFamily: 'outfit',
                             fontSize: 21, color: Colors.GRAY
@@ -56,7 +69,7 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
                     {userEnrolledCourse.length == 0 ?
                         <Ionicons name="lock-closed" size={25} color={Colors.GRAY} />
                         :
-                        <Ionicons name="play" size={25} color={Colors.GRAY} />
+                        <Ionicons name="play" size={25} color={checkIsChapterCompleted(item.id) ? Colors.GREEN : Colors.GRAY} />
                     }
                 </TouchableOpacity >
 
@@ -67,3 +80,18 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
     )
 }
 
+const styles = StyleSheet.create({
+    inCompleteChapter: {
+        display: 'flex', flexDirection: 'row',
+        alignItems: 'center', justifyContent: 'space-between',
+        padding: 15, borderWidth: 1, borderRadius: 10, marginTop: 10,
+        borderColor: Colors.GRAY
+    },
+    CompleteChapter: {
+        display: 'flex', flexDirection: 'row',
+        backgroundColor: Colors.LIGHT_GREEN,
+        alignItems: 'center', justifyContent: 'space-between',
+        padding: 15, borderWidth: 1, borderRadius: 10, marginTop: 10,
+        borderColor: Colors.GREEN
+    }
+})

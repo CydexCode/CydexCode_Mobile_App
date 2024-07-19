@@ -6,12 +6,20 @@ import { Stack } from "expo-router";
 import { Text, View, StyleSheet, Platform } from 'react-native';
 import Home from "./(tabs)/Home"
 import { useFonts } from 'expo-font';
+import { CompleteChapterContext } from './Context/CompleteChapterContext';
+import { useState } from "react";
 
 export default function RootLayout() {
-
+  
+  const [isChapterComplete,setIsChapterComplete]=useState(false);
+  
   return (
     <ClerkProvider publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+      
+      <CompleteChapterContext.Provider value={{isChapterComplete,setIsChapterComplete}}>
+   
       <SignedIn>
+
       <Stack screenOptions={{
           headerShown: false
         }}>
@@ -25,6 +33,7 @@ export default function RootLayout() {
       <Login />
 
       </SignedOut>
+      </CompleteChapterContext.Provider>
     </ClerkProvider>
   );
 }

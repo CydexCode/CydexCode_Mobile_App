@@ -1,18 +1,20 @@
-import { View, Text, FlatList, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
 import ContentItem from './ContentItem'
 import Colors from '../../Colors/Colors'
-import { useNavigation } from 'expo-router'
+import { useNavigation } from '@react-navigation/native'
 
-export default function Content({ content }) {
+
+
+export default function Content({ content, onChapterFinish }) {
     let contentRef;
     const navigation = useNavigation();
     const [activeIndex, setActiveIndex] = useState(0);
     const onNextBtnPress = (index) => {
         if (content?.length <= index + 1) {
-            navigation.goBack('CourseDetails');
-
+          // navigation.goBack();
+            onChapterFinish()
             return;
         }
         setActiveIndex(index + 1)
@@ -34,20 +36,22 @@ export default function Content({ content }) {
                     contentRef = ref
                 }}
                 renderItem={({ item, index }) => (
-                    <View
-                        style={{
-                            width: Dimensions.get('screen').width,
-                            padding: 20,
-                            marginBottom: 40
-                        }}>
-                        <Text style={{
-                            fontFamily: 'outfit-medium',
-                            fontSize: 22,
-                            marginTop: 5
-                        }}>{item.heading}</Text>
-                        <ContentItem
-                            description={item?.description?.html} output={item?.output?.html}
-                        />
+                    <View>
+                        <ScrollView
+                            style={{
+                                width: Dimensions.get('screen').width,
+                                padding: 20,
+                                marginBottom: 60
+                            }}>
+                            <Text style={{
+                                fontFamily: 'outfit-medium',
+                                fontSize: 22,
+                                marginTop: 5
+                            }}>{item.heading}</Text>
+                            <ContentItem
+                                description={item?.description?.html} output={item?.output?.html}
+                            />
+                        </ScrollView>
                         <TouchableOpacity style={{
                             marginTop: 10,
                             position: 'absolute',
@@ -58,6 +62,8 @@ export default function Content({ content }) {
                         }} onPress={() => onNextBtnPress(index)}>
                             <Text style={{
                                 padding: 15,
+                                marginRight: 40,
+                             
                                 backgroundColor: Colors.PRIMARY,
                                 color: Colors.WHITE,
                                 textAlign: 'center',
