@@ -41,6 +41,13 @@ export default function TabLayout() {
         }}
 
       />
+          <Tabs.Screen name="LeaderBoard"
+        options={{
+          tabBarLabel: "LeaderBoard",
+          tabBarIcon: ({ color }) => <MaterialIcons name="leaderboard" size={24} color={color} />
+        }}
+
+      />
       <Tabs.Screen name="ProfileScreen"
         options={{
           tabBarLabel: "ProfileScreen",

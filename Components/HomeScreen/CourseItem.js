@@ -4,9 +4,9 @@ import { getCourseList } from '../../app/Services/Index'
 import SubHeading from '../SubHeading';
 import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import CourseProgressBar from './CourseProgressBar';
 
-
-export default function CourseItem({item}) {
+export default function CourseItem({item,completedChapter}) {
   return (
     <View style={{
         padding: 10,
@@ -18,9 +18,10 @@ export default function CourseItem({item}) {
             style={{ width: 210, height: 120, borderRadius: 15 }} />
         <View style={{ padding: 3 }}>
             <Text style={{
+                fontFamily: 'outfit-medium',
                 fontSize: 15,
-            }}>{item.name}</Text>
-            </View>
+            }}>{item?.name}</Text>
+          
 
             <View style={{display:'flex',flexDirection:'row',justifyContent:'space-between', fontSize: 10,}}>
                 <View style={{
@@ -53,7 +54,15 @@ export default function CourseItem({item}) {
         </View>
         <Text style={{padding: 3,
              fontSize: 10,
-        }}>Cost : {item.free==0?'Free':item.price} $</Text>
+        }}>Cost : {item?.free==0?'Free':item?.price} $</Text>
+    </View>
+        
+    {completedChapter!=undefined?
+        <CourseProgressBar 
+            totalChapter={item?.chapters?.length}
+            completedChapter={completedChapter}
+        />:null}
+         
     </View>
   )
 }

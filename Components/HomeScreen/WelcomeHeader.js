@@ -1,6 +1,9 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import { useUser } from "@clerk/clerk-expo";
+import Coin from '../../assets/images/coin.png'
+import Colors from '../../Shared/Colors';
+
 
 export default function WelcomeHeader() {
     const { isLoaded, isSignedIn, user } = useUser();
@@ -13,14 +16,23 @@ export default function WelcomeHeader() {
 
     return (
         <View style={styles.Container}>
+           
             <View>
+                
                 <Text style={styles.greetingText}>Hello</Text>
                 <Text style={styles.userName}>{user.fullName}</Text>
+                <View style={styles.rowStyle}>
+                    <Image source={Coin} style={{ width: 15, height: 15 }} />
+                    <Text style={styles.mainText}>3500</Text>
+                </View>
             </View>
+            <View >
+          
             <Image
                 source={{ uri: user.imageUrl }}
                 style={styles.profileImage}
             />
+           </View>
         </View>
     );
 }
@@ -32,20 +44,20 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
-        paddingTop:30,
-        
+        paddingTop: 40,
+
 
     },
     greetingText: {
         fontSize: 15,
         color: '#333',
-        color:'#fff',
+        color: '#fff',
     },
     userName: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#333',
-        color:'#fff',
+        color: '#fff',
     },
     profileImage: {
         width: 40,
@@ -53,4 +65,15 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         marginLeft: 10,
     },
+    mainText:{
+        color:'#fff',
+        fontSize:15,
+        fontFamily:'outfit'
+    },
+    rowStyle:{
+        display:'flex',
+        flexDirection:'row',
+        gap:10,
+        alignItems:'center'
+    }
 });

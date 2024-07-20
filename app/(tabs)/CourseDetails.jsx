@@ -52,7 +52,7 @@ export default function CourseDetails() {
   }
 
   return params.course && (
-    <ScrollView style={{ padding: 30 }} >
+    <ScrollView style={{ padding: 10 , paddingTop:60}} >
       <TouchableOpacity onPress={() => navigate.goBack()}>
         <Ionicons name="arrow-back-circle-sharp" size={30} color="black" />
       </TouchableOpacity>

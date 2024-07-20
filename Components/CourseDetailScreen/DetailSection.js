@@ -9,13 +9,13 @@ import { Ionicons } from '@expo/vector-icons';
 export default function DetailSection({course,enrollCourse,userEnrolledCourse}) {
     return (
         <View style={{
-            padding: 10, borderRadius: 15,
+            padding: 5, borderRadius: 15,
             backgroundColor: "#fff"
         }}>
 
             <Image source={{ uri: course?.banner?.url }}
                 style={{
-                    width: Dimensions.get('screen').width * 0.80,
+                    width: Dimensions.get('screen').width * 0.92,
                     height: 190, borderRadius: 15
                 }}
             />

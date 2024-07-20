@@ -38,7 +38,7 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
     return chapterList && (
         <View style={{
             padding: 10,
-            backgroundColor: Colors.WHITE, marginTop: 20,
+            backgroundColor: Colors.WHITE, marginTop: 20,paddingBottom: 50,
             borderRadius: 15, marginBottom: 27
         }}>
             <Text style={{
