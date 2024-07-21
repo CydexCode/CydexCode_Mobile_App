@@ -10,6 +10,7 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
     const { isChapterComplete, setIsChapterComplete } = useContext(CompleteChapterContext)
 
     const navigation = useNavigation();
+  
     const OnChapterPress = (chapter) => {
         if (userEnrolledCourse.length == 0) {
             ToastAndroid.show('Please Enroll Course!', ToastAndroid.LONG)
@@ -38,7 +39,7 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
     return chapterList && (
         <View style={{
             padding: 10,
-            backgroundColor: Colors.WHITE, marginTop: 20,paddingBottom: 50,
+            backgroundColor: Colors.WHITE, marginTop: 20, paddingBottom: 50,
             borderRadius: 15, marginBottom: 27
         }}>
             <Text style={{

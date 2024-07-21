@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <ScrollView>
-      <View style={{ padding: 15, backgroundColor: '#32CD32', height: 160, marginBottom: 30 }}>
+      <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140, marginBottom: 30 }}>
 
         <WelcomeHeader />
         <SearchBar />

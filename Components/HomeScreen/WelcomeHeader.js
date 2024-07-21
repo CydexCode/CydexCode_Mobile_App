@@ -21,10 +21,7 @@ export default function WelcomeHeader() {
                 
                 <Text style={styles.greetingText}>Hello</Text>
                 <Text style={styles.userName}>{user.fullName}</Text>
-                <View style={styles.rowStyle}>
-                    <Image source={Coin} style={{ width: 15, height: 15 }} />
-                    <Text style={styles.mainText}>3500</Text>
-                </View>
+               
             </View>
             <View >
           

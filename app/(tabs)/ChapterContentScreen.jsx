@@ -4,14 +4,14 @@ import Content from '../../Components/ChapterContent/Content'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { MarkChapterCompleted } from '../Services/Index';
 import { CompleteChapterContext } from '../Context/CompleteChapterContext';
-import { UserPointsContext } from '../Context/UserPointsContext';
+import { useUser } from '@clerk/clerk-expo';
 
 export default function ChapterContentScreen() {
   const param = useRoute().params;
   const navigation = useNavigation();
   const { isChapterComplete, setIsChapterComplete } = useContext(CompleteChapterContext)
-  const {userPoints,setUserPoints}=useContext(UserPointsContext);
 
+  const {user}=useUser();
 
   useEffect(() => {
     console.log("ChapterId", param.chapterId)
@@ -20,9 +20,9 @@ export default function ChapterContentScreen() {
   }, [param])
 
   const onChapterFinish = () => {
-    const totalPoints=Number(userPoints)+param.content?.length*10;
+
     MarkChapterCompleted(param.chapterId, param.userCourseRecordId,
-      user.primaryEmailAddress.emailAddress,totalPoints).then(resp=>{
+      user.primaryEmailAddress.emailAddress).then(resp=>{
   
       if (resp) {
         ToastAndroid.show('Chapter Completed!', ToastAndroid.LONG)
