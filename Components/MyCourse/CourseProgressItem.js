@@ -1,5 +1,6 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
+import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../../Colors/Colors';
 import CourseProgressBar from '../HomeScreen/CourseProgressBar';
@@ -33,17 +34,17 @@ export default function CourseProgressItem({item,completedChapter}) {
                   <View style={{
                       display: 'flex',
                       flexDirection: 'row',
-                      alignItems: 'center', gap: 5, marginTop: 5
+                      alignItems: 'center', gap: 5, marginTop: 5 ,marginLeft:130
                   }}>
-                      <Ionicons name="md-time-outline" size={18} color="black" />
-                      <Text style={{fontFamily:'outfit'}}>{item?.time}</Text>
+                    <Ionicons name="time-outline" size={15} color="black" />
+                      <Text style={{fontFamily:'outfit'}}>{item?.time} Hr</Text>
                   </View>
                   <View>
                   </View>
               </View>
               <Text style={{marginTop:5,
               color:Colors.PRIMARY,
-              fontFamily:'outfit-medium'}}>{item.price==0?'Free':item.price}</Text>
+              fontFamily:'outfit-medium'}}>{item.price==0?'Free':item.price} $</Text>
           </View>
          {completedChapter!=undefined?
           <CourseProgressBar

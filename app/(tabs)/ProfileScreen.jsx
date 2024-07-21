@@ -1,51 +1,46 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
-import Colors from '../../Colors/Colors'
-import { useUser } from "@clerk/clerk-expo";
+import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import Colors from '../../Colors/Colors';
+import { useClerk } from "@clerk/clerk-expo";
 import WelcomeHeaderProfile from '../../Components/HomeScreen/WelcomeHeaderProfile';
+import About from '../../Components/HomeScreen/About';
 
 export default function ProfileScreen() {
+  const { signOut } = useClerk();
+
   return (
-    <View>
-      <View style={{
-        height: 180, backgroundColor: '#32CD32',
-        padding: 30,
-      }}>
-        <Text style={{
-          fontFamily: 'outfit-bold', paddingTop: 40,
-          color: Colors.WHITE,
-          fontSize: 30
-        }}>ProfileScreen</Text>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}></Text>
+        <WelcomeHeaderProfile />
       </View>
 
-     <WelcomeHeaderProfile/>
-
-
-      <TouchableOpacity style={styles.button} onPress={() => signOut()}>
-        <Text style={styles.buttonText}>Log Out</Text>
-      </TouchableOpacity>
-
+      <View style={styles.content}>
+        <About />
+      </View>
     </View>
-  )
+  );
 }
 
-
 const styles = StyleSheet.create({
+  container: {
+    flex: 1, // Ensure the container takes up the full screen height
 
-
-  button: {
-    marginTop: 20,
-    backgroundColor: '#32CD32',
-    padding: 10,
-    margin: 30,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
+  header: {
+    height: 120,
+    backgroundColor: Colors.PRIMARY2,
+    padding: 30,
   },
-
+  headerText: {
+    fontFamily: 'outfit-bold',
+    paddingTop: 40,
+    color: Colors.WHITE,
+    fontSize: 30,
+  },
+  content: {
+    flex: 1, // Allows the content view to take up remaining space
+    paddingTop: 350,
+    paddingHorizontal: 30, // Ensure content has horizontal padding
+  },
 });
-

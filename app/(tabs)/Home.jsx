@@ -8,14 +8,14 @@ import Header from '../../Components/HomeScreen/Header.js';
 import CourseList from '../../Components/HomeScreen/CourseList.js';
 
 import CourseProgress from '../../Components/HomeScreen/CourseProgress.js'
-
+import Colors from '../../Colors/Colors';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Home() {
-  const { signOut } = useClerk();
 
   return (
     <ScrollView>
-      <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140, marginBottom: 30 }}>
+      <View style={{ padding: 15, backgroundColor:Colors.PRIMARY2, height: 120, marginBottom: 30 }}>
 
         <WelcomeHeader />
         <SearchBar />
@@ -35,7 +35,6 @@ export default function Home() {
 
       </View>
 
-    
     </ScrollView>
   )
 }
@@ -56,5 +55,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
   },
+
+  socialMedia: {
+    marginTop: 20,
+    alignItems: 'center',
+},
+socialMediaIcons: {
+    flexDirection: 'row',
+    marginTop: 5,
+    justifyContent: 'space-around',
+    width: '80%',
+},
+
 });
 

@@ -29,7 +29,7 @@ export default function CourseList({ level }) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
     return (
-        <View style={{ height: 230, }}>
+        <View style={{ height: 255, }}>
             <SubHeading text={capitalizeFirstLetter(level) + ' Courses'} color={level=='Basic'&&Colors.WHITE} ></SubHeading>
             <FlatList
                 data={courseList}
