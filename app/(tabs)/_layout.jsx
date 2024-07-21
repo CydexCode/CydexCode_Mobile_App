@@ -19,6 +19,14 @@ export default function TabLayout() {
 
       />
        <Tabs.Screen
+        name="ChapterContentScreen"
+        options={{
+          tabBarLabel: "ChapterContentScreen",
+          tabBarIcon: ({ color }) => <SimpleLineIcons name="book-open" size={24} color={color} />,
+          tabBarButton: () => null // Hide the tab button
+        }}
+      />
+      <Tabs.Screen
         name="CourseDetails"
         options={{
           tabBarLabel: "CourseDetails",
@@ -33,6 +41,7 @@ export default function TabLayout() {
         }}
 
       />
+   
       <Tabs.Screen name="ProfileScreen"
         options={{
           tabBarLabel: "ProfileScreen",

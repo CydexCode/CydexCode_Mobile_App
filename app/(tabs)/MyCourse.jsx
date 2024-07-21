@@ -1,10 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import MyCourseCopy from '../../Components/HomeScreen/MyCourseCopy.js'
 
-export default function MyCourse() {
+export default function CourseProgress() {
   return (
     <View>
-      <Text>MyCourse</Text>
+      <MyCourseCopy />
     </View>
   )
 }

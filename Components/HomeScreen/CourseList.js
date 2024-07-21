@@ -7,6 +7,7 @@ import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import CourseItem from './CourseItem';
 import { useNavigation } from '@react-navigation/native';
+import Colors from '@/Shared/Colors';
 
 export default function CourseList({ level }) {
     const navigation=useNavigation();
@@ -29,7 +30,7 @@ export default function CourseList({ level }) {
     };
     return (
         <View style={{ height: 230, }}>
-            <SubHeading text={capitalizeFirstLetter(level) + ' Courses'}></SubHeading>
+            <SubHeading text={capitalizeFirstLetter(level) + ' Courses'} color={level=='Basic'&&Colors.WHITE} ></SubHeading>
             <FlatList
                 data={courseList}
                 key={courseList.id}

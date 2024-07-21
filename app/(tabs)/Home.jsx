@@ -1,42 +1,42 @@
 
 import React from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity ,ScrollView } from 'react-native';
 import { useUser, useClerk } from '@clerk/clerk-expo';
-import WelcomeHeader from '../../Components/HomeScreen/WelcomeHeader.js'
+import WelcomeHeader from '../../Components/HomeScreen/WelcomeHeader'
 import SearchBar from '../../Components/HomeScreen/SerchBar.js';
 import Header from '../../Components/HomeScreen/Header.js';
 import CourseList from '../../Components/HomeScreen/CourseList.js';
+
+import CourseProgress from '../../Components/HomeScreen/CourseProgress.js'
 
 
 export default function Home() {
   const { signOut } = useClerk();
 
   return (
-    <View>
-    <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140 , marginBottom:30}}>
+    <ScrollView>
+      <View style={{ padding: 15, backgroundColor: '#32CD32', height: 140, marginBottom: 30 }}>
 
-      <WelcomeHeader />
-      <SearchBar />
+        <WelcomeHeader />
+        <SearchBar />
 
-      
-    </View>
+
+      </View>
       <View>
-        <View style={{ padding: 10  }}>
+        <View style={{ padding: 10 }}>
+        <CourseProgress  />
           <CourseList level='Basic' />
-         
+
         </View>
-        <View style={{ padding: 10  }}>
-          
+        <View style={{ padding: 10 }}>
+
           <CourseList level='Advance' />
         </View>
-       
+
       </View>
 
-
-
-
-
-    </View>
+    
+    </ScrollView>
   )
 }
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 
 
   button: {
-    marginTop: 500,
+    marginTop: 20,
     backgroundColor: '#32CD32',
     padding: 10,
     margin: 30,
@@ -58,6 +58,3 @@ const styles = StyleSheet.create({
   },
 });
 
-//  <TouchableOpacity style={styles.button} onPress={() => signOut()}>
-//       <Text style={styles.buttonText}>Log Out</Text>
-//     </TouchableOpacity>
