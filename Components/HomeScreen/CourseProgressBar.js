@@ -2,8 +2,8 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import Colors from '../../Colors/Colors'
 
-export default function CourseProgressBar({totalChapter,completedChapter}) {
-    const width=(completedChapter/totalChapter)*100+"%"
+export default function CourseProgressBar({ totalChapter, completedChapter }) {
+  const width = `${Math.min((completedChapter / totalChapter) * 100, 100)}%`;
   return (
     <View style={{
         width:'100%',

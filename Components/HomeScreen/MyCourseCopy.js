@@ -1,13 +1,13 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import SubHeading from '../SubHeading'
+import Colors from '../../Colors/Colors'
 import { useUser } from '@clerk/clerk-expo';
-import { GetAllProgressCourse } from '../../app/Services/Index';
-import Colors from '../../Colors/Colors';
-import CourseItem from './CourseItem';
 import { useNavigation } from '@react-navigation/native';
+import { GetAllProgressCourse } from '../../app/Services/Index';
+import CourseProgressItem from '../MyCourse/CourseProgressItem';
 
-export default function CourseProgress() {
+
+export default function MyCourseCopy() {
     const {user}=useUser();
     const navigation=useNavigation();
     const [progressCourseList,setProgressCourseList]=useState();
@@ -21,27 +21,31 @@ export default function CourseProgress() {
       })
   }
   return (
-    <View>
-          {/* <SubHeading text={'In Porgress'} 
-    color={Colors.GREEN} />
-            <FlatList
+    <ScrollView>
+       <View style={{height:180,backgroundColor:'#32CD32',
+    padding:30,}}>
+    <Text style={{fontFamily:'outfit-bold',paddingTop:40,
+  color:Colors.WHITE,
+  fontSize:30}}>My Course</Text>
+    </View>
+    <FlatList
                 data={progressCourseList}
-               
-                horizontal={true}
+                style={{marginTop:-50}}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => (
                     <TouchableOpacity
+                    style={{margin:8,padding:5}}
                     onPress={()=>navigation.navigate('CourseDetails',{
                         course:item.course
                     })}
                     >
-                        <CourseItem item={item.course}
+                        <CourseProgressItem item={item.course}
                         completedChapter={item?.completedChapter?.length}
                         />
                     </TouchableOpacity>
 
                 )}
-            /> */}
-    </View>
+            />
+    </ScrollView>
   )
 }

@@ -2,7 +2,7 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity ,ScrollView } from 'react-native';
 import { useUser, useClerk } from '@clerk/clerk-expo';
-import WelcomeHeader from '../../Components/HomeScreen/WelcomeHeader.js'
+import WelcomeHeader from '../../Components/HomeScreen/WelcomeHeader'
 import SearchBar from '../../Components/HomeScreen/SerchBar.js';
 import Header from '../../Components/HomeScreen/Header.js';
 import CourseList from '../../Components/HomeScreen/CourseList.js';
@@ -35,9 +35,7 @@ export default function Home() {
 
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => signOut()}>
-        <Text style={styles.buttonText}>Log Out</Text>
-      </TouchableOpacity>
+    
     </ScrollView>
   )
 }
