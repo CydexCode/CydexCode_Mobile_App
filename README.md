@@ -37,13 +37,15 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
 ![Untitled design (8)](https://github.com/CydexCode/CydexCode_Mobile_App/assets/112784979/653901d5-29f5-4052-af17-fe6c88649a96)
 
 ### Home
-![Untitled design (9)](https://github.com/user-attachments/assets/694cc678-a17a-4fe3-90f3-0bd794dae5c3)
-
-### Course Content 
-![vsV](https://github.com/user-attachments/assets/0d060a89-3fd6-4a0f-8932-ebd0cb3767cb)
+![Untitled design (9)](https://github.com/user-attachments/assets/7e5ae5e2-5232-465d-9164-fbc6be111f27)
 
 
-### Profile
+### Enrolled Courses 
+![vsV](https://github.com/user-attachments/assets/8f9a8336-aaec-4b07-a2ef-0694ccdc4b2f)
+
+
+### User Profile
+![Untitled design (11)](https://github.com/user-attachments/assets/1272c857-0706-4bbb-9a20-99e5c206ce91)
 
 ## Why Choose CydexCode?
 - **Quality Content**: Our courses are designed by industry professionals and educators with years of experience.
