@@ -36,7 +36,7 @@ export default function TabLayout() {
       />
       <Tabs.Screen name="MyCourse"
         options={{
-          tabBarLabel: "MyCourse",
+          tabBarLabel: "My Courses",
           tabBarIcon: ({ color }) => <MaterialIcons name="library-books" size={24} color={color} />
         }}
 
@@ -44,7 +44,7 @@ export default function TabLayout() {
    
       <Tabs.Screen name="ProfileScreen"
         options={{
-          tabBarLabel: "ProfileScreen",
+          tabBarLabel: "Profile Screen",
           tabBarIcon: ({ color }) => <Ionicons name="people" size={24} color={color} />
         }}
 

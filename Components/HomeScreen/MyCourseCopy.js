@@ -22,15 +22,15 @@ export default function MyCourseCopy() {
   }
   return (
     <ScrollView>
-       <View style={{height:180,backgroundColor:'#32CD32',
+       <View style={{height:150,backgroundColor:Colors.PRIMARY2,
     padding:30,}}>
-    <Text style={{fontFamily:'outfit-bold',paddingTop:40,
+    <Text style={{fontFamily:'outfit-bold',paddingTop:20,
   color:Colors.WHITE,
-  fontSize:30}}>My Course</Text>
+  fontSize:30}}>My Courses</Text>
     </View>
     <FlatList
                 data={progressCourseList}
-                style={{marginTop:-50}}
+                style={{marginTop:-50,paddingLeft:13}}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => (
                     <TouchableOpacity

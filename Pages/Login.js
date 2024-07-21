@@ -48,12 +48,12 @@ export default function Login() {
 
     return (
         <View>
-            <Image source={require('../assets/images/cydexcodeLogo.png')} />
+            <Image source={require('../assets/images/a1.png')} />
             <View style={styles.container}>
-                
+
                 <Text style={styles.IntroText}>
-                    Learn to <Text style={styles.highlight}>code</Text>, build 
-                    <Text style={styles.highlight}> impactful projects</Text>, and 
+                    Learn to <Text style={styles.highlight}>code</Text>, build
+                    <Text style={styles.highlight}> impactful projects</Text>, and
                     earn <Text style={styles.highlight}>certifications</Text> with CydexCode
                 </Text>
                 <Text style={{ textAlign: 'center', marginTop: 80, fontSize: 17 }}>

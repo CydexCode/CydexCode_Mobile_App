@@ -1,29 +1,32 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Colors from '../../Colors/Colors'
-import { useUser } from "@clerk/clerk-expo";
+import { useClerk, useUser } from "@clerk/clerk-expo";
 import WelcomeHeaderProfile from '../../Components/HomeScreen/WelcomeHeaderProfile';
 
 export default function ProfileScreen() {
+  const { signOut } = useClerk();
+
   return (
     <View>
       <View style={{
-        height: 180, backgroundColor: '#32CD32',
+        height: 150, backgroundColor:Colors.PRIMARY2,
         padding: 30,
       }}>
         <Text style={{
           fontFamily: 'outfit-bold', paddingTop: 40,
           color: Colors.WHITE,
           fontSize: 30
-        }}>ProfileScreen</Text>
+        }}></Text>
+
+
+        <WelcomeHeaderProfile />
+        
       </View>
 
-     <WelcomeHeaderProfile/>
 
 
-      <TouchableOpacity style={styles.button} onPress={() => signOut()}>
-        <Text style={styles.buttonText}>Log Out</Text>
-      </TouchableOpacity>
+
 
     </View>
   )
