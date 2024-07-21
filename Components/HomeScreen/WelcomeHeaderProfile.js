@@ -14,6 +14,7 @@ export default function WelcomeHeaderProfile() {
     // console.log('User Profile Image URL:', user?.picture); // Debugging
 
     return (
+        <View >
         <View style={styles.Container}>
             <View >
 
@@ -23,21 +24,13 @@ export default function WelcomeHeaderProfile() {
                 />
             </View>
             <View>
-
-
                 <Text style={styles.userName}>{user.fullName}</Text>
                 <Text style={styles.userEmail}>{user.primaryEmailAddress.emailAddress}</Text>
-
-
-
             </View>
             <TouchableOpacity style={styles.button} onPress={() => signOut()}>
                 <Text style={styles.buttonText}>Log Out</Text>
             </TouchableOpacity>
-
-          
-
-
+        </View>
         </View>
     );
 }
@@ -48,10 +41,8 @@ const styles = StyleSheet.create({
         flexDirection: 'colum',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 10,
-      
-
-
+        paddingTop: -30,
+        
     },
     greetingText: {
         fontSize: 15,
@@ -69,17 +60,16 @@ const styles = StyleSheet.create({
 
     userEmail: {
         paddingTop: 20,
-        fontSize: 14,     
+        fontSize: 14,
         color: "#000",
-        alignItems: 'center',
-        
+        textAlign: 'center',
     },
 
     profileImage: {
         width: 120,
         height: 120,
         borderRadius: 100,
-       paddingTop:-50,
+        paddingTop: -50,
 
     },
     mainText: {
