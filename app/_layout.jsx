@@ -9,12 +9,29 @@ import { useFonts } from 'expo-font';
 import { CompleteChapterContext } from './Context/CompleteChapterContext';
 import { useState } from "react";
 
+const tokenCache = {
+  async getToken(key) {
+    try {
+      return SecureStore.getItemAsync(key);
+    } catch (err) {
+      return null;
+    }
+  },
+  async saveToken(key, value) {
+    try {
+      return SecureStore.setItemAsync(key, value);
+    } catch (err) {
+      return;
+    }
+  },
+};
+
 export default function RootLayout() {
 
   const [isChapterComplete, setIsChapterComplete] = useState(false);
 
   return (
-    <ClerkProvider publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider tokenCache={tokenCache} publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}>
 
       <CompleteChapterContext.Provider value={{ isChapterComplete, setIsChapterComplete }}>
         <View style={styles.container}>

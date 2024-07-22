@@ -21,7 +21,7 @@ export default function MyCourseCopy() {
       })
   }
   return (
-    <ScrollView>
+    <View>
        <View style={{height:150,backgroundColor:Colors.PRIMARY2,
     padding:30,}}>
     <Text style={{fontFamily:'outfit-bold',paddingTop:20,
@@ -46,6 +46,6 @@ export default function MyCourseCopy() {
 
                 )}
             />
-    </ScrollView>
+    </View>
   )
 }
