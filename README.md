@@ -4,6 +4,8 @@
 
 The CydexCode E-Learning App is a comprehensive platform designed to make learning coding accessible, engaging, and effective for everyone. Whether you are just starting your coding journey or looking to advance your skills, our app offers a wide range of courses to meet your needs.
 
+[Demo](https://www.linkedin.com/posts/sachinthanabuddhika_elearning-mobileapp-reactnative-activity-7222902829466755073-V4as?utm_source=share&utm_medium=member_desktop)
+
 ## Key Features
 
 ### Courses
