@@ -2,7 +2,7 @@ import { useUser } from '@clerk/clerk-expo';
 import { gql, request } from 'graphql-request';
 
 
-const MASTER_URL = "https://api-us-east-1-shared-usea1-02.hygraph.com/v2/clyflbflu03eb07wdgia6s5jy/master"
+const MASTER_URL = "https://api-ap-south-1.hygraph.com/v2/clz28jphe02ui07v0ly8c2ta9/master"
 
 export const getCourseList = async (level) => {
   const query = gql`
