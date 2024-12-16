@@ -35,18 +35,23 @@ The CydexCode E-Learning App is a comprehensive platform designed to make learni
 - **Profile Customization**: Update your profile information, including bio, profile picture, and learning goals.
 
 ### Login System
+![Login Page](https://github.com/user-attachments/assets/cbaa09eb-0aef-422d-826f-ada5c8981e26)
 
-![Untitled design (8)](https://github.com/CydexCode/CydexCode_Mobile_App/assets/112784979/653901d5-29f5-4052-af17-fe6c88649a96)
 
 ### Home
-![Untitled design (9)](https://github.com/user-attachments/assets/7e5ae5e2-5232-465d-9164-fbc6be111f27)
+![Home Page](https://github.com/user-attachments/assets/0643c460-aa21-47f1-b53d-357e3ab6a9f1)
 
 
 ### Enrolled Courses 
-![Untitled design (10)](https://github.com/user-attachments/assets/46e72c79-f03b-4435-b33a-d62a55846b0e)
+![Course](https://github.com/user-attachments/assets/e2a19eda-b5c3-46d2-84d0-11bc19a4c170)
+
+### Chapters
+![Chapters](https://github.com/user-attachments/assets/62155a68-e86d-48b2-bdd4-b98fb890908e)
+
 
 ### User Profile
-![Untitled design (11)](https://github.com/user-attachments/assets/1272c857-0706-4bbb-9a20-99e5c206ce91)
+![Screenshot 2024-12-16 113210](https://github.com/user-attachments/assets/232bda42-e0c9-45f3-a020-22af822edeeb)
+
 
 ## Why Choose CydexCode?
 - **Quality Content**: Our courses are designed by industry professionals and educators with years of experience.
