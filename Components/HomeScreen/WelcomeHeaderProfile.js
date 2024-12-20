@@ -27,9 +27,9 @@ export default function WelcomeHeaderProfile() {
                 <Text style={styles.userName}>{user.fullName}</Text>
                 <Text style={styles.userEmail}>{user.primaryEmailAddress.emailAddress}</Text>
             </View>
-            <TouchableOpacity style={styles.button} onPress={() => signOut()}>
+            {/* <TouchableOpacity style={styles.button} onPress={() => signOut()}>
                 <Text style={styles.buttonText}>Log Out</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
         </View>
     );
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: 'colum',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingTop: -30,
+        paddingTop: -90,
         
     },
     greetingText: {
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
         borderRadius: 100,
-        paddingTop: -50,
+        paddingTop: -100,
 
     },
     mainText: {

@@ -15,8 +15,13 @@ export default function Index() {
     'outfit-bold': require('../assets/fonts/Outfit-Bold.ttf'),
     'outfit-medium': require('../assets/fonts/Outfit-SemiBold.ttf'),
   });
-  return <Redirect href={'/Home'}/>
+  return ( <
+    
+  Redirect href={'/Home'}
 
+ 
+  />
+  )
 }
 
 const styles = StyleSheet.create({

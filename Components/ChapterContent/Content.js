@@ -13,7 +13,7 @@ export default function Content({ content, onChapterFinish }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const onNextBtnPress = (index) => {
         if (content?.length <= index + 1) {
-          // navigation.goBack();
+          //navigation.goBack();
             onChapterFinish()
             return;
         }
